@@ -41,3 +41,21 @@ class Cadastro {
         });
     }
 }
+
+const cadastro = new Cadastro();
+
+// Captura o formulário
+const form = document.getElementById("form-cadastro");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nome = document.getElementById("input-nome").value;
+    const email = document.getElementById("input-email").value;
+
+    cadastro.cadastrar(nome, email);
+
+    // Limpa os campos
+    document.getElementById("input-nome").value = '';
+    document.getElementById("input-email").value = '';
+});
+
